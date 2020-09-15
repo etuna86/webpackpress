@@ -4,14 +4,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: "./src/index.js",
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+},
+  entry: './src/index.js',
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.join(__dirname, "dist"),
-    publicPath: ''
+    publicPath:'/',
   },
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -68,6 +74,19 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: ['pug-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader:'file-loader',
+            options:{
+              name:'[name].[ext]',
+              outputPath:'img/',
+              publicPath:'img/',
+            }
+          }
+        ],
       }
     ],
   },

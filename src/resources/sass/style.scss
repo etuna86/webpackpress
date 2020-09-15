@@ -26,12 +26,18 @@
   font-family: 'ArialNovaW07-Light';
   src: url("../fonts/arialnova/Arial-Nova-W07-Light/Arial-Nova-W07-Light.ttf") format("truetype"); }
 
-.App{
-  background:$blackColor ;
-  color:$whitecolor;
-  height:100%;
-  text-align:center;
+  #root{
+    height:100%;
+    width:100%;
+    position: absolute;
+  }
+  .main-page{
+    background:$blackcolor;
+    color:$whitecolor;
+    height:100%;
+    text-align:center;
 }
+
 body {
   @include getFontFamily();
 }
@@ -89,7 +95,7 @@ body {
 
 header{
   padding-top: 50px;
-  position: fixed;
+  position: relative;
   z-index: 999999;
   display: block;
   width: 100%;
@@ -115,7 +121,7 @@ header{
     padding: 5px 0px 0 0;
     a{
       img{
-        height:30px;
+        height:50px;
       }
     }
   }

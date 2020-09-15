@@ -1,39 +1,36 @@
-import React from 'react';
-//import logo from './img/logo.png';
+import React,{Component} from 'react';
+import { BrowserRouter as Router, Route,Switch,withRouter  } from 'react-router-dom';
 import './resources/sass/app.scss';
+import Header from './layouts/header.js';
+import Content from './contents/content.js';
+import Footer from './layouts/footer.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div> 
-            <div class="col-md-6">
-              
-              
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-              </div> 
-            <div class="col-md-3"></div> 
-        </div>    
-      </div>  
+import Logo from './img/logo.png';
+
+import { createBrowserHistory } from "history";
+
+var chistory = createBrowserHistory();
 
 
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
 
+    }
+  }
+  render(){
+    return (
+      <div className="main-page">
+        <Router  history={ chistory } >
+          <Header />
+          <Content/>
+          <Footer/>
+        </Router>
+      </div>
+    );
+  }
 
-      </header>
-    </div>
-  );
 }
 
 export default App;
