@@ -10,8 +10,7 @@ function Contactus(){
                     <Col md="12" >
                         <div className={"aboutus"}>
                             {"Contact Us"}
-                        </div> 
-            
+                        </div>
                     </Col>
                 </Row>
             </Container>

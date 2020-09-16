@@ -9,7 +9,6 @@ function Home(){
                     <Col md="12" >
                         <div className={"page-content"}>
                             {"Home Page"}
-                         
                         </div> 
                     </Col>
                 </Row>

@@ -8,8 +8,7 @@ function Aboutus(){
                     <Col md="12" >
                         <div className={"aboutus"}>
                             {"About Us"}
-                        </div> 
-            
+                        </div>
                     </Col>
                 </Row>
             </Container>
